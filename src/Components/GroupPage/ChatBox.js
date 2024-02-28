@@ -67,7 +67,7 @@ function ChatBox({group, organizer}) {
                     ? { display: 'flex', flexDirection: 'row-reverse', alignItems: 'center', justifyContent: 'flex-start', padding: '5px' }
                     : { display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', padding: '5px' }
                 }}>
-                  {index !== 0 && (
+                  {(
                     <>
                       <Badge color='primary' variant={(organizer.userId === message.userId) && "dot"}>
                         <Tooltip title={`Name: ${message.userData.userId === userDetails.userId ? "me" : message.userData.userName} Time: ${new Date(message.time).toLocaleTimeString()}`} >

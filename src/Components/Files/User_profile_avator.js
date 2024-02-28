@@ -18,26 +18,30 @@ export const updateUserDetails=async(value)=>{
     return null;
   }
 }
-export const updatePassword = async (userId, password) => {
+export const updatePassword = async (userId,oldPassword , password) => {
   try {
     const updateUser = await axios.put(`${BaseUrl}/User/changePassword/${userId}`,null, {params:{
-      userPassword: password,
+      oldPassword: oldPassword,
+      newPassword: password,
     }
     });
-    message.success(updateUser.data);
+    message.success(updateUser?.data);
   } catch (error) {
     console.log(error) // Accessing error response data directly
+    message.error(error.response?.data);
   }
 };
 
 export const updateEmail = async (userId, email) => {
   try {
-    const updateUser = await axios.put(`${BaseUrl}/User/updateEmail/${userId}`, {
+    const updateUser = await axios.put(`${BaseUrl}/User/updateEmail/${userId}`,null,{params:{
       userEmail: email
+    }
     });
-    message.success(updateUser.data);
+    message.success(updateUser?.data);
   } catch (error) {
-    message.error(error.response.data); // Accessing error response data directly
+    console.log(error);
+    message.error(error?.response?.data); // Accessing error response data directly
   }
 };
 export const getUserPosts=async(userId)=>{
@@ -152,6 +156,16 @@ export const uploadUserPost=async(userId,formdata)=>{
     const response=await axios.post(`${BaseUrl}/User/userPost/${userId}`,formdata,{headers:{'Content-Type':'multipart/form-data',},});
     message.success(response.data);
   }catch(error){
+    message.error(error.response.data);
+  }
+}
+export const checkUser=async(userId,password)=>{
+  try{
+    console.log(userId);
+    const response=await axios.put(`${BaseUrl}/User/checkPassword/${userId}`,null,{params:{password:password}});
+    return response;
+  }catch(error){
+    console.log(error);
     message.error(error.response.data);
   }
 }

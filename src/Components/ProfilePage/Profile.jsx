@@ -22,17 +22,18 @@ import ProfileBottom from './ProfileBottom';
 import { getUserDetailsById } from '../Files/User_profile_avator';
 
 export default function ProfilePage() {
- 
-  const {userDetails}=useUser();
+  const [render,setRender]=useState(false);
+  const {userDetails,setUserData}=useUser();
   const navigate=useNavigate();
-  const [userData,setUserData]=useState();
+  const [userData,setUserData1]=useState();
   useEffect(()=>{
     const fetchUser=async()=>{
       const response=await getUserDetailsById(userDetails.userId);
       setUserData(response);
+      setUserData1(response);
     }
     fetchUser();
-  },[userDetails]);
+  },[userDetails,render]);
   return userDetails ? (
     <section style={{ backgroundColor: 'rgb(151, 235, 207)', marginTop:'10vh',minHeight:'100%', width:'100%' }}>
       <MDBContainer className="py-5">
@@ -99,7 +100,7 @@ export default function ProfilePage() {
           </MDBCol>
         </MDBRow>
         <div style={{marginTop:'10px', padding:'10px',height:'400px',width:'100%'}}>
-           <ProfileBottom />
+           <ProfileBottom onRender={()=>setRender(!render)}/>
         </div>
        
       </MDBContainer>

@@ -306,7 +306,7 @@ else{
           loadingIndicator={
           <div style={{display:'flex',flexDirection:'row',color:'white',alignItems:'center'}}>
              Registering....
-             <CircularProgress size={12}/> 
+             <CircularProgress size={16}/> 
             </div>}
           >Register</LoadingButton>
           </div>

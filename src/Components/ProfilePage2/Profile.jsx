@@ -21,7 +21,7 @@ import { fetchOrganizerDataById, fetchOrganizerDataByUserId } from '../Files/Org
 import { fetchParticipantByUserId } from '../Files/Participant_Details';
 
 export default function ProfilePage2() {
-  const [userDetails1,setUserDetails]=useState(null);
+  const [userDetails1,setUserDetails1]=useState(null);
   const {userId}=useParams();
   const [followUnfollowProcess,setFollowUnfollowProcess]=useState(false);
   const [blockedProcess,setBlockedProcess]=useState(false);
@@ -76,12 +76,12 @@ export default function ProfilePage2() {
   }
   useEffect(()=>{
     const fetchUser=async()=>{
-      try{
+      try{console.log(userId);
         const response=await getUserDetailsById(userId);
         const organizerR=await fetchOrganizerDataByUserId(userId);
         const participantR=await fetchParticipantByUserId(userId);
         const blockedList=await getAllBlocked(userId);
-      setUserDetails({
+      setUserDetails1({
         userData:response,
         organizerR:organizerR,
         participantR:participantR,
@@ -94,7 +94,7 @@ export default function ProfilePage2() {
     fetchUser();
   },[userId]);
   const navigate=useNavigate();
-
+  console.log(userDetails1?.participantR?.rating);
   return (
     <>
     {userDetails?.userId !== userId ? (
@@ -166,7 +166,7 @@ export default function ProfilePage2() {
                                         <MDBCardText>Participant Ratings</MDBCardText>
                                     </MDBCol>
                                     <MDBCol sm="9">
-                                        <MDBCardText className="text-muted"><Rating readOnly value={userDetails1?.participantR?.rating}/></MDBCardText>
+                                        <MDBCardText className="text-muted"><Rating value={userDetails1?.participantR?.rating ?? 0} readOnly /></MDBCardText>
                                     </MDBCol>
                                 </MDBRow>
                                 <hr/>
@@ -282,7 +282,7 @@ export default function ProfilePage2() {
                                             <MDBCardText>Participant Ratings</MDBCardText>
                                         </MDBCol>
                                         <MDBCol sm="9">
-                                            <MDBCardText className="text-muted"><Rating readOnly value={userDetails1?.participantR?.rating}/></MDBCardText>
+                                            <MDBCardText className="text-muted"><Rating value={userDetails1?.participantR?.rating ?? 0} readOnly /></MDBCardText>
                                         </MDBCol>
                                     </MDBRow>
                                     <hr/>

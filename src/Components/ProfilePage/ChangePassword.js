@@ -17,10 +17,10 @@ function ChangePassword({ onClose}) {
 
     const ChangeUserPassword=async(e)=>{
         e.preventDefault();
-        if(oldPassword==userDetails.userPassword){
+        if(oldPassword){
             if(newPassword===confirmPassword){
                 try{
-                    await updatePassword(userDetails.userId,newPassword);
+                    await updatePassword(userDetails.userId,oldPassword,newPassword);
                     updateUserData();
                     onClose();
                 }catch(error){
@@ -30,9 +30,9 @@ function ChangePassword({ onClose}) {
             }else{
                 message.error("new password and confirm password are not same")
             }
-            message.success("password correct");
+            
         }else{
-            message.error("Wrong old password")
+            message.error("Enter old password")
         }
     }
   return (

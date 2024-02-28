@@ -8,7 +8,7 @@ import { updateUserDetails } from '../Files/User_profile_avator';
 import { useNavigate } from 'react-router-dom';
 import { LoadingButton } from '@mui/lab';
 
-function ChangeOtherUserDetails({onClose}) {
+function ChangeOtherUserDetails({onClose,onRender}) {
   const {userDetails,setUserData,updateUserData}=useUser();
   const [submitProcess,setSubmitingProcess]=useState(false);
   const navigate=useNavigate();
@@ -20,6 +20,7 @@ function ChangeOtherUserDetails({onClose}) {
       const response=await updateUserDetails(updatedUserDetails);
       setUserData(response);
       updateUserData();
+      onRender();
       onClose();
     }catch(error){
       console.log(error);

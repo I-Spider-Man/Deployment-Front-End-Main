@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router';
 import { giveParticipantRating } from '../Files/Participant_Details';
 
 
-const ParticipantList = ({ participants }) => {
+const ParticipantList = ({ participants, onRender }) => {
   const [participantR,setParticipantR]=useState(2);
   const [participantRP,setParticipantRP]=useState(false);
   const navigate=useNavigate();
@@ -18,10 +18,12 @@ const ParticipantList = ({ participants }) => {
     try{
       setParticipantRP(true);
       await giveParticipantRating(participantId,userDetails.userId,participantR);
+
     }catch(error){
       console.log(error);
     }finally{
       setParticipantRP(false);
+      onRender();
     }
   }
     return (

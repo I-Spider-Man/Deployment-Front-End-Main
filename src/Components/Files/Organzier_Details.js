@@ -5,8 +5,11 @@ import { message } from "antd";
 export const fetchOrganizerDataByUserId=async(userId)=>{
   try{
     const organizer=await axios.get(`${BaseUrl}/organizer/userId/${userId}`);
-    const rating=await axios.get(`${BaseUrl}/organizer/ratings/${organizer.data.organizerId}`);
-    return(rating.data);
+    if(organizer.data){
+      const rating=await axios.get(`${BaseUrl}/organizer/ratings/${organizer?.data?.organizerId}`);
+      return(rating.data);
+    }
+return []
   }catch(error){
     console.log(error);
   }

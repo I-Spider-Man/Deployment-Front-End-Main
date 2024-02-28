@@ -7,7 +7,7 @@ import FollowingList from './FollowingList';
 import BlockedList from './BlockedList';
 import UpdateProfile from './UpdateProfile';
 import Posts from './Posts';
-function ProfileBottom() {
+function ProfileBottom({onRender}) {
   const { TabPane } = Tabs;
   const items = [
     {
@@ -43,7 +43,7 @@ function ProfileBottom() {
     {
       key: '7',
       label: 'Update Profile',
-      children: <UpdateProfile/>,
+      children: <UpdateProfile onRender={()=>onRender()}/>,
     },
   ];
   return (

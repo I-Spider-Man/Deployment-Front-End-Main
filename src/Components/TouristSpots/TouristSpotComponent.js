@@ -51,7 +51,6 @@ function TouristSpotComponent(props) {
 
 TouristSpotComponent.propTypes = {
   post: PropTypes.shape({
-    date: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     image: PropTypes.array.isRequired,
     imageLabel: PropTypes.string.isRequired,

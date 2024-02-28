@@ -6,7 +6,7 @@ import { useUser } from '../Auth/UserContext';
 import { UploadUserProfile } from '../Files/User_profile_avator';
 import { Avatar, message } from 'antd';
 
-function ChangeProfile({onClose}) {
+function ChangeProfile({onClose,onRender}) {
   const {userDetails,updateUserData}=useUser();
   const [previewImage, setPreviewImage] = useState(userDetails.userProfile);
   const [profileImage,setProfileImage] = useState(null);
@@ -41,6 +41,7 @@ function ChangeProfile({onClose}) {
       setUploadProcess(true);
       const upload=await UploadUserProfile(userDetails.userId,formData);
       updateUserData();
+      onRender();
       onClose();
     }catch(error){
       console.log(error);

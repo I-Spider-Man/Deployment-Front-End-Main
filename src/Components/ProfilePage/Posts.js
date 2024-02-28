@@ -32,6 +32,7 @@ const src =
   "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png";
 function Posts() {
   const { userDetails } = useUser();
+  const [localRender,setLocalRender]=useState(false);
   const [userPosts, setUserPosts] = useState([]);
   const [uploadingProcess, setUploadingProcess] = useState(false);
   const [uploadPost, setUploadPost] = useState(null);
@@ -55,7 +56,7 @@ function Posts() {
     if (window.confirm("do you want to delete this post?")) {
       try {
         await deleteUserPost(userDetails.userId, form);
-        window.location.reload();
+        setLocalRender(!localRender);
       } catch (error) {
         console.log(error);
       }
@@ -92,7 +93,9 @@ function Posts() {
     formData.append("post", uploadPost);
     try {
       await uploadUserPost(userDetails.userId, formData);
-      window.location.reload();
+      setLocalRender(!localRender);
+      setCaption('');
+      setUploadf(false);
     } catch (error) {
       console.log(error);
     }
@@ -108,7 +111,7 @@ function Posts() {
       }
     };
     fetchData();
-  }, []);
+  }, [localRender]);
   return (
     <>
       {userPosts.length > 0 ? (

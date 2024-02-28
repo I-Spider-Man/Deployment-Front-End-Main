@@ -55,6 +55,7 @@ const GroupPage = () => {
     try {
       setJoining(true);
       const response = await participantJoining(joinDetails);
+      updateParticipantData();
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -71,6 +72,7 @@ const GroupPage = () => {
       console.log(error);
     }finally{
       setOrganizerRatingProcess(false);
+
     }
   }
   useEffect(() => {
@@ -95,7 +97,7 @@ const GroupPage = () => {
       }
     };
     fetchOrganizer();
-  }, [groupDetails]);
+  }, [groupDetails,organizerRatingProcess]);
 
   useEffect(() => {
     const fetchParticipant = async () => {
@@ -107,7 +109,7 @@ const GroupPage = () => {
       }
     };
     fetchParticipant();
-  }, [groupDetails]);
+  }, [groupDetails,render]);
 
   useEffect(() => {
     if (userDetails) {
@@ -144,15 +146,14 @@ const GroupPage = () => {
         // Assuming you have a function to update participant data in the context
         updateParticipantData();
         navigate("/");
+        window.location.reload();
       } catch (error) {
         console.log(error);
       } finally {
         setLeavingProcess(false);
       }
     }
-
-    // Add your leave logic here
-  };
+};
 
   return (groupId && groupDetails && participants && organizer) ? (
     <div className="body1">
@@ -235,7 +236,6 @@ const GroupPage = () => {
             </>
           }
           </div>
-          
         </div>
         <div className="date-format" style={{display:'flex',alignItems:'center'}}>
           <marquee>
@@ -246,12 +246,11 @@ const GroupPage = () => {
             <Divider type="vertical" />
             <p>Group Description : {groupDetails.about}</p>
             </div>
-            
           </marquee>
         </div>
         <div id="participants-list">
           {participants.length > 0 ? (
-            <ParticipantList participants={participants} />
+            <ParticipantList participants={participants} onRender={()=>setRender(!render)}/>
           ) : (
             <>no participants</>
           )}

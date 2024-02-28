@@ -9,7 +9,7 @@ import ChangeEmail from './ChangeEmail';
 import ChangeProfile from './ChangeProfile';
 import ChangeOtherUserDetails from './ChangeOtherUserDetails';
 
-function UpdateProfile() {
+function UpdateProfile({onRender}) {
   const [verification,setVerification]=useState(false);
   const [show,setShow]=useState(true);
   const {userDetails}=useUser();
@@ -24,6 +24,7 @@ function UpdateProfile() {
   const showModal = () => {
     setIsModalOpen(true);
   };
+
   const formdata=new FormData();
   useEffect(()=>{
     formdata.append('email',userDetails.userEmail);
@@ -94,10 +95,10 @@ function UpdateProfile() {
 
       {verification?(
         <div>
-          <Button onClick={()=>{setRenderComponent(<ChangePassword onClose={handleOk}/>);showModal()}}>Change Password</Button>
-          <Button onClick={()=>{setRenderComponent(<ChangeEmail onClose={handleOk}/>);showModal()}}>Change Email</Button>
-          <Button onClick={()=>{setRenderComponent(<ChangeProfile onClose={handleOk}/>);showModal()}}>Profile Image</Button>
-          <Button onClick={()=>{setRenderComponent(<ChangeOtherUserDetails onClose={handleOk} />);showModal()}}>Other Details</Button>
+          <Button onClick={()=>{setRenderComponent(<ChangePassword onClose={handleOk} onRender={()=>onRender()}/>);showModal()}}>Change Password</Button>
+          <Button onClick={()=>{setRenderComponent(<ChangeEmail onClose={handleOk} onRender={()=>onRender()}/>);showModal()}}>Change Email</Button>
+          <Button onClick={()=>{setRenderComponent(<ChangeProfile onClose={handleOk} onRender={()=>onRender()}/>);showModal()}}>Profile Image</Button>
+          <Button onClick={()=>{setRenderComponent(<ChangeOtherUserDetails onClose={handleOk} onRender={()=>onRender()} />);showModal()}}>Other Details</Button>
         </div>
       ):(
       <div style={{display:'flex',flexDirection:'column',gap:'5px'}}>
