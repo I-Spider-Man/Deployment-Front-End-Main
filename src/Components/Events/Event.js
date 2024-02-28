@@ -93,7 +93,7 @@ console.log(participantData,organizerData)
   };
 
   const itemTemplate = (item) => {
-    return <img src={item} alt={item} style={{ width: '100%',height:'500px',objectFit:'cover' }} />
+    return <img src={item} alt={item} style={{ height:'500px',objectFit:'fill' }} />
 }
 
 const thumbnailTemplate = (item) => {

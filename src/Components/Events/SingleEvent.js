@@ -10,7 +10,7 @@ function SingleEvent({eventId, eventName, eventPictureList, description, locatio
                             <div className="imageDiv">
                                 {(eventPictureList && eventPictureList.length > 0) && (
                                     <>
-                                    {eventPictureList.map(eventPicture=>(<img src={eventPicture} alt={eventName} />))}
+                                    <img src={eventPictureList[0]} alt={eventName} />
                                     </>
                                 )
                                 }

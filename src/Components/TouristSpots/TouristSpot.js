@@ -94,7 +94,7 @@ const responsiveOptions = [
   }
 ];
 const itemTemplate = (item) => {
-  return <img src={item} alt={item} style={{ minWidth: '500px',height:'500px',objectFit:'cover' }} />
+  return <img src={item} alt={item} style={{ minWidth: '500px',height:'500px',objectFit:'fill' }} />
 }
 
 const thumbnailTemplate = (item) => {
