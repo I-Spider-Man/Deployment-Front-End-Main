@@ -11,7 +11,7 @@ import { useUser } from '../Auth/UserContext';
 import { LoadingButton } from '@mui/lab';
 import { useNavigate } from 'react-router-dom';
 import { updateUserDetails } from '../Files/User_profile_avator';
-const GroupOrganizeForm = ({event,eventName, spotName, ...props }) => {
+const GroupOrganizeForm = ({event,eventName,spotName, ...props }) => {
   const {userDetails,updateOrganizerData,updateUserData}=useUser();
   const [submitProcess,setSubmitProcess]=useState(false);
   const navigate=useNavigate();

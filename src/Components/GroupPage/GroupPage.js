@@ -44,7 +44,6 @@ const GroupPage = () => {
   const { followersData, followingData, blockedData } = useUser();
   const [organizerRating,setOrganizerRating]=useState(2);
   const [organizerRatingProcess,setOrganizerRatingProcess]=useState(false);
-  console.log(followersData, followingData);
   const [alert, setAlert] = useState(false);
   let isOrganizer;
   let isParticipant;
@@ -52,11 +51,9 @@ const GroupPage = () => {
     isOrganizer = organizerData?.groupId == groupId;
     isParticipant = participantData?.groupId == groupId;
   }
-  console.log(userDetails, participantData, organizerData);
   const Participation = async () => {
     try {
       setJoining(true);
-      console.log("detail", joinDetails);
       const response = await participantJoining(joinDetails);
       window.location.reload();
     } catch (error) {
@@ -77,12 +74,9 @@ const GroupPage = () => {
     }
   }
   useEffect(() => {
-    console.log("renders");
     const fetchData = async () => {
-      console.log("fetch");
       try {
         const response = await getGroupById(groupId);
-        console.log(response);
         setGroupDetails(response);
       } catch (error) {
         console.log(error);
@@ -94,7 +88,6 @@ const GroupPage = () => {
   useEffect(() => {
     const fetchOrganizer = async () => {
       try {
-        console.log(groupDetails);
         const response = await fetchOrganizerDataById(groupDetails?.organizerId);
         setOrganizer(response);
       } catch (error) {
@@ -115,8 +108,6 @@ const GroupPage = () => {
     };
     fetchParticipant();
   }, [groupDetails]);
-
-  console.log(groupDetails, participants, organizer);
 
   useEffect(() => {
     if (userDetails) {
@@ -169,7 +160,7 @@ const GroupPage = () => {
         <div className="header1">
           <h1 className="headerh1">
             <span className="group-icon">👥</span> {groupDetails.groupName}
-          </h1>{console.log(groupDetails)}
+          </h1>
           {groupDetails.participantsCount !==
             groupDetails.participantsLimit && (
             <>

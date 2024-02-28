@@ -116,7 +116,6 @@ function NavBar() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        {console.log(participantData,organizerData)}
         <MenuItem onClick={handleProfile}>Profile</MenuItem>
         {(participantData?.participantStatus==="Busy" || organizerData?.organizerStatus==="Busy") && <MenuItem onClick={()=>handleGroup()}>My Group</MenuItem>}
         <MenuItem onClick={()=>handleLogout()} >Logout</MenuItem>

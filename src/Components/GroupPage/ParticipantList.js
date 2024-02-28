@@ -41,7 +41,7 @@ const ParticipantList = ({ participants }) => {
               />
             </div>  
           <span className="participant-name">{participant.userData.userName}</span>
-          <div style={{padding:'10px'}}>{console.log(participant)}
+          <div style={{padding:'10px'}}>
             { participant?.participantRating?.ratingsList?.some(rating=>rating.userId==userDetails.userId) || (participant?.userId == userDetails?.userId) ?
             <Rating readOnly value={participant?.participantRating?.rating ?? 0 }/> :
             <>

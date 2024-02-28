@@ -59,7 +59,6 @@ function LoginPage({ onClose , onReturn}) {
     toggleOTPinput();
     const response=await generateOtp(userDetails.userEmail);
     setUserOtp(response);
-    console.log("user otp"+userotp);
     setGeneratedOtp(!generatedOtp);
     setOtpProcess(false)
 }
@@ -77,7 +76,7 @@ const handleLogin = async (e) => {
   try {
     const userData = await userLoginIn(formdata);
     if (userData) {
-      console.log("login success");
+      message.success("Login success");
       setUserDetails((prevState) => ({
         ...prevState,
         userId: userData.userId,
@@ -85,7 +84,6 @@ const handleLogin = async (e) => {
         userName: userData.userName,
       }));
       
-      // Use the updated userDetails from the state
       const updatedUserDetails = {
         ...userDetails,
         userId: userData.userId,
@@ -119,7 +117,6 @@ const handleSubmit=async(e)=>{
     message.error("Enter strong password");
     return ;
   }
-  console.log('Current state values:', { otp, userotp, ...userDetails.userPassword, userPasswordC });
 if(userotp !== ""){
   if( otp == userotp){
       if(userDetails.userPassword === userPasswordC){

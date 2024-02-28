@@ -100,7 +100,6 @@ export const userLoginIn=async(value)=>{
     const response=await axios.post(`${BaseUrl}/User/SignInUser`,value,{headers:{"Content-Type":'application/json'}});
     if(response.status===200){
         const picture=await axios.get(`${BaseUrl}/User/userProfile/${response.data.userId}`);
-        console.log(picture.data);
         return {
           ...response.data,
           userProfile:pictureUrl(picture.data)
@@ -116,7 +115,6 @@ export const getUserDetails=async(value)=>{
   try{
     const fetchUser=await axios.get(`${BaseUrl}/User/email/${value}`);
     const picture=await axios.get(`${BaseUrl}/User/userProfile/${fetchUser.data.userId}`);
-    console.log(picture.data);
     return {
       ...fetchUser.data,
       userProfile:pictureUrl(picture.data)
@@ -133,11 +131,9 @@ export const registerUser=async(value)=>{
   }
 }
 export const generateOtp=async(value)=>{
-  console.log(" otp rendered")
   try{
     const response=await axios.get(`${BaseUrl}/User/otp/${value}`);
     const otp=response.data;
-    console.log("otp obtained "+otp+ "response obtained "+response);
     return otp
   }catch(error){
     console.log("error while sending otp :",error)
@@ -145,7 +141,6 @@ export const generateOtp=async(value)=>{
 }
 export const UploadUserProfile=async(userId,profile)=>{
   try{
-    console.log(profile);
     const response=await axios.post(`${BaseUrl}/User/updateProfile/${userId}`,profile);
     message.success(response.data);
   }catch(error){

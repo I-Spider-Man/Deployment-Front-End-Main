@@ -36,7 +36,6 @@ export const getAllParticipantsById = async (grpId) => {
     const participantWithUserData = await Promise.all(
       participantR.map(async (participant) => {
         const userData = await getUserDetailsById(participant.userId);
-        console.log(userData);
         return {
           ...participant,
           userData: userData,
@@ -50,12 +49,10 @@ export const getAllParticipantsById = async (grpId) => {
   }
 };
 export const getGroupById = async (grpId) => {
-  console.log(grpId);
   try {
     const response = await axios.get(
       `${BaseUrl}/Group/groupId/${grpId}`
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -76,7 +73,6 @@ export const getGroup = async (eventName, spotName) => {
       );
       return response.data;
     } else {
-      console.log("no values");
       return [];
     }
   } catch (error) {

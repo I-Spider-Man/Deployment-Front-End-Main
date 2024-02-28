@@ -17,7 +17,6 @@ function Connect() {
         if(userDetails){
             try{
             setLoadingProcess(true);
-            console.log(indicate);
             const response=await sendAdminFeedBack(userDetails?.userId,feedBack,indicate);
             setFeedBack('');
             

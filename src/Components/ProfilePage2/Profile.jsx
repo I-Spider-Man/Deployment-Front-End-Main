@@ -26,7 +26,6 @@ export default function ProfilePage2() {
   const [followUnfollowProcess,setFollowUnfollowProcess]=useState(false);
   const [blockedProcess,setBlockedProcess]=useState(false);
   const {userDetails,followersData,followingData,blockedData,updateUserBlockedList,updateUserFollowersList,updateUserFollowingList} =useUser();
-  console.log(blockedData);
   const handleFollow=async()=>{
     try{
       setFollowUnfollowProcess(true);
@@ -99,7 +98,7 @@ export default function ProfilePage2() {
   return (
     <>
     {userDetails?.userId !== userId ? (
-        <>{console.log(userDetails.blockedList)}
+        <>
         {userDetails1?.blockedList?.some(user=>user.userId==userDetails.userId) ? (
             <section style={{ backgroundColor: 'rgb(151, 235, 207)', marginTop:'10vh', minHeight:'100%', width:'100%' }}>
             <MDBContainer className="py-5">

@@ -60,7 +60,7 @@ function UserOrganizedDetails() {
         {organizerData? organizerData.organizedCount: "0"}
       </div>
       <Divider type='vertical' style={{borderWidth:'3px'}}/>
-      <div style={{width:'100%', height:'300px'}}>{console.log(organizerData)}
+      <div style={{width:'100%', height:'300px'}}>
       <label style={{display:'flex',alignItems:'center',gap:'10px',padding:'10px'}} >Your Organizer Rating  <Rating readOnly value={organizerData?.rating?.rating}/> </label>
       <Table dataSource={dataSource} columns={columns}/>
       </div>

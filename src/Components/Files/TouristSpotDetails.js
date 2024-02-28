@@ -8,9 +8,7 @@ export const pictureUrl = (image) => {
 };
 export const fetchSpotBySpotName = async (spotName) => {
   try {
-    console.log(spotName);
     const response = await axios.get(`${BaseUrl}/spot/${spotName}`);
-    console.log(response);
     const picture = await axios.get(
       `${BaseUrl}/spot/pictureList/${response.data.spotId}`
     );
@@ -43,7 +41,6 @@ export const fetch_spot_data = async () => {
         };
       })
     );
-    console.log(spotwithpicture);
     return spotwithpicture;
   } catch (error) {
     console.log("error while fetching spot data ", error);

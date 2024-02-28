@@ -23,7 +23,6 @@ function Event() {
   const handleAlert = () => {
     setAlert(!alert);
   }
-console.log(participantData,organizerData)
   const handleClickListItem = () => {
     if (((!organizerData || (organizerData.organizerStatus == "Free")) && (!participantData || (participantData.participantStatus == "Free")))) {
       setOpen(true);
@@ -88,7 +87,6 @@ console.log(participantData,organizerData)
 ];
 
   const handleOrganizeSubmit = (formData) => {
-    console.log('Organize Form Data:', formData);
     setOrganizeFormVisible(false);
   };
 

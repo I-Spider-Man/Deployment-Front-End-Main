@@ -7,7 +7,6 @@ import { message } from 'antd';
 
 function FeedBack({spotId,eventId}) {
     const {userDetails}=useUser();
-    console.log(spotId,eventId);
     const [ratingDialog,setRatingDialog]=useState(false);
     const [render,setRender]=useState(false);
     const [comment,setComment]=useState('');
@@ -29,7 +28,6 @@ function FeedBack({spotId,eventId}) {
         }
         fetchComments();
     },[spotId,eventId,render])
-    console.log(prevComment)
     const postComment=async()=>{
         if(userDetails){
             try{

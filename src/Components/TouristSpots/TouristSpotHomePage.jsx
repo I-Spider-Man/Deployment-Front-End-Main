@@ -16,7 +16,6 @@ const TouristSpotHomePage = () => {
     try{
         const fetchSpots=async()=>{
             const response=await fetch_spot_data();
-            console.log(response)
             setSpotDetails(response);
 
         }

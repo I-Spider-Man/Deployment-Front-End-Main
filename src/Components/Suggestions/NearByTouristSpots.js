@@ -11,7 +11,6 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 function NearByTouristSpots({spotId}) {
     const [nbts,setNBTS]=useState([]);
     const navigate=useNavigate();
-    console.log(spotId);
     useEffect(()=>{
         try{
             async function fetchNBTS(){

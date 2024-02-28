@@ -10,13 +10,11 @@ import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 function NearByEvents({eventId}) {
     const [nbv,setNBV]=useState([]);
-    console.log(eventId);
     const navigate=useNavigate();
     useEffect(()=>{
         const fetch=async()=>{
             try{
                 const response=await eventSuggestion(eventId);
-                console.log(response);
                 setNBV(response);
             }catch(error){
                 console.log(error);

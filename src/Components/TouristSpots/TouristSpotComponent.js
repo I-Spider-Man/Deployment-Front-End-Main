@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 
 function TouristSpotComponent(props) {
   const { post } = props;
-  console.log(post)
   return  post?.spotPictureList?.[0] ? (
     <Grid item xs={12} md={6}>
       <Link  to={`/Spot/${post.spotName}`}>

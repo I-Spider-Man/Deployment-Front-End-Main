@@ -34,11 +34,6 @@ function TouristSpot() {
  const handleAlertClose=()=>{
   setAlert(false);
  }
-  useEffect(()=>{
-  console.log(spot);
-  },[spot])
-
-
   const handleClickListItem = () => {
     if(((!organizerData || organizerData.organizerStatus=="Free") && (!participantData || participantData.participantStatus=="Free"))){
       setOpen(true);
@@ -76,7 +71,6 @@ const getStatus = () => {
   }
 };
 const handleOrganizeSubmit = (formData) => {
-  console.log('Organize Form Data:', formData);
   setOrganizeFormVisible(false);
 };
 const responsiveOptions = [

@@ -107,7 +107,6 @@ export const UserProvider = ({ children }) => {
  }
   const setUserData = async(user) => {
     if(user===null){
-      console.log("null need only on logout");
       localStorage.setItem('participantDetails',JSON.stringify(user));
       localStorage.setItem('organizerDetails',JSON.stringify(user));
     }

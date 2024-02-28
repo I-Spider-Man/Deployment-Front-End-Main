@@ -20,7 +20,6 @@ function Home() {
       try {
         const response = await (fetch_popularEvents());
         const response1 = await (fetch_popularSpots());
-        console.log(response,response1);
         setSpotDetails(response1);
         setEventDetails(response);
         
@@ -30,22 +29,14 @@ function Home() {
     };
     fetchData();
   },[]);
-    useEffect(() => {
-    console.log("event", eventDetails);
-  }, [eventDetails]);
-  useEffect(() => {
-    console.log("spot", spotDetails);
-  }, [spotDetails]);
 
   useEffect(() => {
-    console.log("event", eventDetails);
     if (eventDetails.length > 0) {
       setEvent(eventDetails[currentEvent]);
     }
   }, [eventDetails, currentEvent]);
   
   useEffect(() => {
-    console.log("spot", spotDetails);
     if (spotDetails.length > 0) {
       setSpot(spotDetails[currentSpot]);
     }

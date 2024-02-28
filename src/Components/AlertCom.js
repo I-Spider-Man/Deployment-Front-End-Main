@@ -2,7 +2,6 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/
 import React from 'react'
 
 function AlertCom({title,body,onOpen,onClose}) {
-  console.log("render");
   return (
     <Dialog
     open={onOpen}

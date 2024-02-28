@@ -26,7 +26,6 @@ export const sendAdminFeedBack=async(userId,feedBack,indicate)=>{
     }
 }
 export const allSpotTitle=async()=>{
-    console.log('renders')
     try{
         const getTitle=await axios.get(`${BaseUrl}/spots`);
         const title=getTitle.data.map((spot)=>{
@@ -66,7 +65,6 @@ export const sendingMessage=async(groupId,messageContent)=>{
     }
 }
 export const allEventTitle=async()=>{
-    console.log('renders')
     try{
         const getTitle=await axios.get(`${BaseUrl}/activeEvents`);
         const title=getTitle.data.map((event)=>{
