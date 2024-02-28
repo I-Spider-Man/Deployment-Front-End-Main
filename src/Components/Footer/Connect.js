@@ -6,22 +6,31 @@ import { Avatar } from 'antd';
 import { LoadingButton } from '@mui/lab';
 import { sendAdminFeedBack } from '../Files/Other_DataBase';
 import logo from '../../Assests/MicrosoftTeams-image (9).png'
+import AlertCom from '../AlertCom';
+import { message } from 'antd';
 function Connect() {
     const {userDetails}=useUser();
     const [feedBack,setFeedBack]=useState('');
     const [indicate,setIndicate]=useState(false);
     const [loadingProcess,setLoadingProcess]=useState(false);
     const handleAdminFeedback=async()=>{
-        try{
+        if(userDetails){
+            try{
             setLoadingProcess(true);
             console.log(indicate);
             const response=await sendAdminFeedBack(userDetails?.userId,feedBack,indicate);
             setFeedBack('');
+            
         }catch(error){
             console.log(error);
         }finally{
             setLoadingProcess(false);
         }
+        }else{
+            message.warning("Login first");
+            return ;
+        }
+        
     }
   return (
     <div style={{width:'100%',height:'50%',alignItems:'center',gap:'20px',display:'flex',flexDirection:'column',justifyContent:'flex-start'}}>
