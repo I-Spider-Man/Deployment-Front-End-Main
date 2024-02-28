@@ -208,7 +208,7 @@ const GroupOrganizeForm = ({event,eventName,spotName, ...props }) => {
     >
       <DialogTitle> <h2>Organize Group</h2></DialogTitle>
       <DialogContent sx={{display:'flex',flexDirection:'column',gap:"12"}}>
-          login First !!!!
+          To organize a group you need to login first.
       </DialogContent>
         <DialogActions>
           <Button variant='contained' onClick={()=>handleCancel() }>Ok</Button>

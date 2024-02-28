@@ -39,8 +39,9 @@ function FeedBack({spotId,eventId}) {
         }catch(error){
             console.log(error);
         }finally{
-            setRender(!render)
-            window.location.reload();
+            setComment('');
+            setRender(!render);
+            setRatingDialog(false);
         }
         }
         else{

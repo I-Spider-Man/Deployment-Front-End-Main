@@ -82,8 +82,7 @@ const openLogin=()=>{
     {...other}
   >
     <DialogTitle>Groups List</DialogTitle>
-      Login First
-
+      To join in any group you need to login first.
     <DialogActions>
       <Button variant='contained' autoFocus onClick={()=>handleCancel()}>Ok</Button>
     </DialogActions>
