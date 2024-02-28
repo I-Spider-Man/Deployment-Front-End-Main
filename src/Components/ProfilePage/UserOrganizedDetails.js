@@ -1,9 +1,8 @@
 import { Divider, Table } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { useUser } from '../Auth/UserContext'
-import { Button, Rating } from '@mui/material';
+import { Rating } from '@mui/material';
 import { fetchOrganizedGroups } from '../Files/Organzier_Details';
-import { Tab } from 'bootstrap';
 
 function UserOrganizedDetails() {
   const {organizerData,userDetails}=useUser();

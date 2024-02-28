@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
-.main{
-  background-image: linear-gradient(74deg, rgba(246, 246, 246, 0.03) 0%, rgba(246, 246, 246, 0.03) 4%,rgba(152, 152, 152, 0.03) 4%, rgba(152, 152, 152, 0.03) 32%,rgba(123, 123, 123, 0.03) 32%, rgba(123, 123, 123, 0.03) 41%,rgba(189, 189, 189, 0.03) 41%, rgba(189, 189, 189, 0.03) 45%,rgba(151, 151, 151, 0.03) 45%, rgba(151, 151, 151, 0.03) 47%,rgba(61, 61, 61, 0.03) 47%, rgba(61, 61, 61, 0.03) 77%,rgba(34, 34, 34, 0.03) 77%, rgba(34, 34, 34, 0.03) 100%),linear-gradient(117deg, rgba(222, 222, 222, 0.03) 0%, rgba(222, 222, 222, 0.03) 7%,rgba(67, 67, 67, 0.03) 7%, rgba(67, 67, 67, 0.03) 18%,rgba(61, 61, 61, 0.03) 18%, rgba(61, 61, 61, 0.03) 26%,rgba(32, 32, 32, 0.03) 26%, rgba(32, 32, 32, 0.03) 52%,rgba(119, 119, 119, 0.03) 52%, rgba(119, 119, 119, 0.03) 60%,rgba(252, 252, 252, 0.03) 60%, rgba(252, 252, 252, 0.03) 68%,rgba(9, 9, 9, 0.03) 68%, rgba(9, 9, 9, 0.03) 100%),linear-gradient(313deg, rgba(193, 193, 193, 0.03) 0%, rgba(193, 193, 193, 0.03) 12%,rgba(184, 184, 184, 0.03) 12%, rgba(184, 184, 184, 0.03) 24%,rgba(194, 194, 194, 0.03) 24%, rgba(194, 194, 194, 0.03) 43%,rgba(128, 128, 128, 0.03) 43%, rgba(128, 128, 128, 0.03) 54%,rgba(87, 87, 87, 0.03) 54%, rgba(87, 87, 87, 0.03) 71%,rgba(169, 169, 169, 0.03) 71%, rgba(169, 169, 169, 0.03) 93%,rgba(83, 83, 83, 0.03) 93%, rgba(83, 83, 83, 0.03) 100%),linear-gradient(19deg, rgba(186, 186, 186, 0.03) 0%, rgba(186, 186, 186, 0.03) 9%,rgba(77, 77, 77, 0.03) 9%, rgba(77, 77, 77, 0.03) 19%,rgba(38, 38, 38, 0.03) 19%, rgba(38, 38, 38, 0.03) 27%,rgba(203, 203, 203, 0.03) 27%, rgba(203, 203, 203, 0.03) 39%,rgba(130, 130, 130, 0.03) 39%, rgba(130, 130, 130, 0.03) 43%,rgba(184, 184, 184, 0.03) 43%, rgba(184, 184, 184, 0.03) 81%,rgba(108, 108, 108, 0.03) 81%, rgba(108, 108, 108, 0.03) 100%),linear-gradient(90deg, rgb(107, 4, 15),rgb(4,27,240));
+.main {
+  /* background-image: linear-gradient(74deg, rgba(246, 246, 246, 0.03) 0%, rgba(246, 246, 246, 0.03) 4%,rgba(152, 152, 152, 0.03) 4%, rgba(152, 152, 152, 0.03) 32%,rgba(123, 123, 123, 0.03) 32%, rgba(123, 123, 123, 0.03) 41%,rgba(189, 189, 189, 0.03) 41%, rgba(189, 189, 189, 0.03) 45%,rgba(151, 151, 151, 0.03) 45%, rgba(151, 151, 151, 0.03) 47%,rgba(61, 61, 61, 0.03) 47%, rgba(61, 61, 61, 0.03) 77%,rgba(34, 34, 34, 0.03) 77%, rgba(34, 34, 34, 0.03) 100%),linear-gradient(117deg, rgba(222, 222, 222, 0.03) 0%, rgba(222, 222, 222, 0.03) 7%,rgba(67, 67, 67, 0.03) 7%, rgba(67, 67, 67, 0.03) 18%,rgba(61, 61, 61, 0.03) 18%, rgba(61, 61, 61, 0.03) 26%,rgba(32, 32, 32, 0.03) 26%, rgba(32, 32, 32, 0.03) 52%,rgba(119, 119, 119, 0.03) 52%, rgba(119, 119, 119, 0.03) 60%,rgba(252, 252, 252, 0.03) 60%, rgba(252, 252, 252, 0.03) 68%,rgba(9, 9, 9, 0.03) 68%, rgba(9, 9, 9, 0.03) 100%),linear-gradient(313deg, rgba(193, 193, 193, 0.03) 0%, rgba(193, 193, 193, 0.03) 12%,rgba(184, 184, 184, 0.03) 12%, rgba(184, 184, 184, 0.03) 24%,rgba(194, 194, 194, 0.03) 24%, rgba(194, 194, 194, 0.03) 43%,rgba(128, 128, 128, 0.03) 43%, rgba(128, 128, 128, 0.03) 54%,rgba(87, 87, 87, 0.03) 54%, rgba(87, 87, 87, 0.03) 71%,rgba(169, 169, 169, 0.03) 71%, rgba(169, 169, 169, 0.03) 93%,rgba(83, 83, 83, 0.03) 93%, rgba(83, 83, 83, 0.03) 100%),linear-gradient(19deg, rgba(186, 186, 186, 0.03) 0%, rgba(186, 186, 186, 0.03) 9%,rgba(77, 77, 77, 0.03) 9%, rgba(77, 77, 77, 0.03) 19%,rgba(38, 38, 38, 0.03) 19%, rgba(38, 38, 38, 0.03) 27%,rgba(203, 203, 203, 0.03) 27%, rgba(203, 203, 203, 0.03) 39%,rgba(130, 130, 130, 0.03) 39%, rgba(130, 130, 130, 0.03) 43%,rgba(184, 184, 184, 0.03) 43%, rgba(184, 184, 184, 0.03) 81%,rgba(108, 108, 108, 0.03) 81%, rgba(108, 108, 108, 0.03) 100%),linear-gradient(90deg, rgb(107, 4, 15),rgb(4,27,240)); */
+  /* background-image: url("https://wallpaperaccess.com/full/4605375.jpg"); */
+  background-color: #f4a460;
   border-radius: 10px;
   /* --------------------------------------- */
   /* display: flex;
@@ -12,43 +14,43 @@
   /* width: 80vw; */
 }
 
-.flex{
+.flex {
   display: flex;
   align-items: center;
 }
-.btn{
-  padding: .6rem 1.5rem;
+.btn {
+  padding: 0.6rem 1.5rem;
   background: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
   border-radius: 3rem;
   border: none;
   outline: none;
   cursor: pointer;
 }
-.btn a{
+.btn a {
   color: hsl(0, 0%, 100%);
   font-weight: 500;
 }
 
 @media screen and(min-width: 1240px) {
-  .container{
-      width: 80% !important;
-      margin: auto !important;
+  .container {
+    width: 80% !important;
+    margin: auto !important;
   }
 
-  .section{
-      padding: 6rem 0 4rem;
+  .section {
+    padding: 6rem 0 4rem;
   }
 }
 
 @media screen and (min-width: 2560px) {
-  body{
-      zoom: 1.7;
+  body {
+    zoom: 1.7;
   }
 }
-.btn:hover{
-  background: hsl(187, 85%, 43%);;
+.btn:hover {
+  background: hsl(187, 85%, 43%);
 }
-.grid{
+.grid {
   display: grid;
   align-items: center;
 }
@@ -65,7 +67,7 @@
   z-index: 2;
 }
 
-.secTitle{
+.secTitle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +75,7 @@
 .main .secTitle .title::after {
   position: absolute;
   content: "";
-  background: hsl(187, 85%, 43%);;
+  background: hsl(187, 85%, 43%);
   height: 5px;
   width: 120px;
   right: 0;
@@ -84,14 +86,14 @@
   justify-content: center;
   gap: 1.5rem;
 }
-.event_name{
+.event_name {
   font-size: 1.5rem;
   font-weight: bolder;
 }
-.event_address{
+.event_address {
   font-weight: 400;
 }
-.desc p{
+.desc p {
   font-weight: bolder;
   margin-top: 5px;
 }
@@ -103,7 +105,7 @@
   margin: 15px;
   border-radius: 10px;
   align-items: center;
-  background: rgb(225, 225, 225);;
+  background: rgb(225, 225, 225);
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
   overflow: hidden;
 }
@@ -115,7 +117,7 @@
   .cardInfo {
     color: wheat;
   }
-  .cardInfo .continent .icon{
+  .cardInfo .continent .icon {
     color: wheat;
   }
 }
@@ -141,16 +143,11 @@
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transform: 2s ease;
   cursor: pointer;
 }
-.EventCard {
-  width: 190px;
-  height: 254px;
-  background: rgb(236, 236, 236);
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
+
 /* .imageDiv:hover {
   transform: translateX(-33.33%); /* Adjust the value based on the number of images 
 } */
@@ -163,7 +160,7 @@
   padding: 1rem;
 }
 .main .secContent .singleDestination .cardInfo .destTitle {
-  color: rgb(240, 240, 246);;
+  color: rgb(240, 240, 246);
   font-size: 1.25rem;
 }
 .main .secContent .singleDestination .cardInfo .continent {
@@ -174,7 +171,7 @@
   font-size: 18px;
 }
 .main .secContent .singleDestination .cardInfo .continent .name {
-  color: hsl(240, 4%, 36%);;
+  color: hsl(240, 4%, 36%);
   font-weight: 400;
   font-size: 14px;
 }
@@ -184,11 +181,11 @@
   padding: 1rem;
   margin: 1rem 0;
   color: black;
-  border-top: 1.5px solid rgb(190, 190, 190);;
-  border-bottom: 1.5px solid rgb(190, 190, 190);;
+  border-top: 1.5px solid rgb(190, 190, 190);
+  border-bottom: 1.5px solid rgb(190, 190, 190);
 }
 .main .secContent .singleDestination .cardInfo .fees .grade {
-  color: hsl(240, 4%, 36%);;
+  color: hsl(240, 4%, 36%);
   max-width: 100px;
   line-height: 20px;
   display: flex;
@@ -209,7 +206,7 @@
 } */
 .main .secContent .singleDestination .cardInfo .desc {
   font-size: 13.5px;
-  color: hsl(240, 4%, 36%);;
+  color: hsl(240, 4%, 36%);
   font-weight: 500;
 }
 .main .secContent .singleDestination .cardInfo .btn {
@@ -224,7 +221,7 @@
   font-size: 25px;
 }
 
-.event_name{
+.event_name {
   font-size: large;
 }
 
@@ -249,10 +246,9 @@
   .secContent .singleDestination {
     height: auto;
   }
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
 
 /* -------------------------------------------------- */
-
 
 .slideshow-container {
   max-width: 100%;
@@ -278,7 +274,8 @@
 
 /* Additional styles for automatic sliding */
 @keyframes slideAnimation {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   25% {
@@ -298,7 +295,7 @@
 
 /* -------------------------------------------------------------------------------- */
 
-.top-slideshow-div{
+.top-slideshow-div {
   width: auto;
   /* height: 75vh; */
   /* background-color: white; */
@@ -307,7 +304,7 @@
   margin-bottom: 5%;
 }
 
-.top-slideshow-div h2{
+.top-slideshow-div h2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -365,5 +362,3 @@
 .mySlides img:hover {
   transform: scale(1.1);
 }
-
-

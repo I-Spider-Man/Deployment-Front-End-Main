@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { Carousel } from 'primereact/carousel';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { eventSuggestion } from '../Files/Suggesting';

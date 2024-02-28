@@ -1,14 +1,11 @@
-import NavBar from '../NavBar/NavBar'
 import { useParams } from 'react-router-dom'
 import '../Events/Event.css'
-import {fetchSpotBySpotName, fetch_spot_data, fetch_spots_by_id } from '../Files/TouristSpotDetails';
-import Footer from '../Footer/Footer';
+import {fetchSpotBySpotName} from '../Files/TouristSpotDetails';
 import Loading from '../LoadingComponents/Loading';
 import { useEffect, useState } from 'react';
 import GroupOrganizeForm from '../Group/GroupOrganizeForm';
 import { useUser } from '../Auth/UserContext';
 import GroupJoinPage from '../Group/GroupJoinPage';
-import { Alert } from '@mui/material';
 import AlertCom from '../AlertCom';
 import { Galleria } from 'primereact/galleria';
 import FeedBack from '../Feedback/FeedBack';

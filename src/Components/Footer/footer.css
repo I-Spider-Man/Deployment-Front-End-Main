@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    background-color: #000;
+    background-color: teal;
     color: #fff;
     font-family: "Poppins-Medium", sans-serif;
 }
